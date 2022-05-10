@@ -15,3 +15,14 @@ function getNumberInfo() {
     // Display Information in the Browser
     document.getElementById("numinfo").innerHTML = txt;
 }
+
+/*
+    Function to return the sum of the digits of the number 2^exponent
+    powerDigitSum(15) returns 26
+    powerDigitSum(1000) returns 1366
+*/
+function powerDigitSum(exponent) {
+    const num = BigInt(Math.pow(2,exponent));
+    const digits = num.toString().split('');
+    return digits.reduce((sum,digit) => sum + parseInt(digit), 0);
+}
